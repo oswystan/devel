@@ -175,11 +175,17 @@ x() {
         *.tar.bz2)
             tar jxvf $1
             ;;
-        *.tar.gz)
+        *.tar.gz|*.tgz)
             tar zxvf $1
             ;;
         *.tar.xz)
             tar Jxvf $1
+            ;;
+        *.rar)
+            unrar x $1
+            ;;
+        *.zip)
+            unzip  $1
             ;;
         *)
             echo "ERROR: unknown file format"
