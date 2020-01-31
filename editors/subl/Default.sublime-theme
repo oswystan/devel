@@ -1,0 +1,14 @@
+[
+    {
+        "class": "sidebar_label",
+        "color": [0, 0, 0],
+        "font.bold": false,
+        "font.size": 15,
+        "font.face": "lato"
+    },
+    {
+        "class": "tab_label",
+        "font.size": 15,
+        "font.face": "lato",
+    },
+]

@@ -1,0 +1,36 @@
+[core]
+	editor = vim
+[credential]
+	helper = cache
+[log]
+    date = iso
+[alias]
+	st = status -s
+	ci = commit
+	co = checkout
+	br = branch -vv
+	cl = clean -fd
+	df = diff
+	lg = log --name-status
+[color]
+    ui = auto
+[color "diff"]
+    plain = normal
+    meta = bold
+    frag = 123
+    old = 198 bold
+    new = 48 bold
+    commit = 45
+    whitespace = normal 154
+[color "branch"]
+    current = 43 bold
+    local = normal
+    remote = 45
+    plain = normal
+[color "status"]
+    header = normal
+    added = 154
+    updated = 85
+    changed = 198
+    untracked = 11
+    nobranch = 242

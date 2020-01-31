@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+###########################################################################
+##                     Copyright (C) 2020 wystan
+##
+##       filename: INSTALL
+##    description:
+##        created: 2020-01-31 14:51:34
+##         author: wystan
+##
+###########################################################################
+
+setup_vim() {
+    rm -f ~/.vimrc
+    rm -rf ~/.vim
+    ln -s $PWD/vim/vimrc ~/.vimrc
+    ln -s $PWD/vim/plugin ~/.vim
+}
+
+###########################################################################
+echo "==>install editors..."
+setup_vim

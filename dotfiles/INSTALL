@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+###########################################################################
+##                     Copyright (C) 2020 wystan
+##
+##       filename: INSTALL
+##    description:
+##        created: 2020-01-31 14:40:08
+##         author: wystan
+##
+###########################################################################
+
+## setup bashrc
+setup_bashrc() {
+    rc_file="$PWD/bashrc"
+    is_exist=`grep bashrc ~/.bashrc | wc -l`
+    if [ $is_exist -le 0 ]; then
+        cat >>~/.bashrc <<!EOF
+
+##############################################################
+if [ -f $rc_file ]; then
+    source $rc_file
+fi
+##############################################################
+
+!EOF
+    fi
+}
+
+## setup tmux configuration
+setup_tmux() {
+    rm -f ~/.tmux.conf && ln -s $PWD/tmux.conf ~/.tmux.conf
+}
+
+## setup clang-format
+setup_clang() {
+    rm -f ~/.clang-format && ln -s $PWD/clang-format ~/.clang-format
+}
+
+## setup git
+setup_git() {
+    cp gitconfig ~/.gitconfig
+    git_ver=`git --version|cut -d' ' -f3`
+    git config --global user.name oswystan
+    git config --global user.email oswystan@126.com
+    [[ $ver > '1.7.10' ]] && git config --global push.default simple
+}
+
+###########################################################################
+echo "==>install dotfiles..."
+setup_bashrc
+setup_tmux
+setup_clang
+setup_git

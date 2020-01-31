@@ -1,0 +1,31 @@
+// sublime text user config
+{
+    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+    "create_window_at_startup": false,
+    "font_face": "operator mono book",
+    "font_options": ["gray_antialias", "no_italic"],
+    "open_files_in_new_window": false,
+    "tab_size": 4,
+    "font_size": 14,
+    "translate_tabs_to_spaces": true,
+    "update_check": false,
+    "trim_trailing_white_space_on_save": true,
+    "word_wrap": false,
+}
+
+// plugin: alignment
+{
+    "align_indent": true,
+    "mid_line_tabs": false,
+    "alignment_chars": ["=",":","-"],
+    "alignment_space_chars": ["=",":","-"],
+    "alignment_prefix_chars": [
+        "+", "-", "&", "|", "<", ">", "!", "~", "%", "/", "*", "."
+    ]
+}
+
+// sublime text key map
+[
+        { "keys": ["alt+a"], "command": "alignment" }
+]
+
