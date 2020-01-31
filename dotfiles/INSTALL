@@ -12,7 +12,7 @@
 ## setup bashrc
 setup_bashrc() {
     rc_file="$PWD/bashrc"
-    is_exist=`grep bashrc ~/.bashrc | wc -l`
+    is_exist=`grep $rc_file ~/.bashrc | wc -l`
     if [ $is_exist -le 0 ]; then
         cat >>~/.bashrc <<!EOF
 
