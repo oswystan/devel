@@ -17,6 +17,8 @@ alias ..='cd ../..'
 alias ...='cd ../../..'
 alias ....='cd ../../../..'
 alias goto='find . -name '
+alias vg=vagrant
+complete -W 'status up halt box ssh destroy' vg
 
 # alias for git
 alias gl='git lg'
