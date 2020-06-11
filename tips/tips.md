@@ -105,6 +105,8 @@ $ sudo chkconfig iptables off
 ## enable ssh on boot
 $ sudo chkconfig sshd on
 
+## SSL sniffer
+$ openssl s_client -connect 1.1.1.1:443
 ```
 
 # macos
