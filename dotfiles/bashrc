@@ -18,6 +18,7 @@ alias ...='cd ../../..'
 alias ....='cd ../../../..'
 alias goto='find . -name '
 alias vg=vagrant
+alias mac.version="less /System/Library/CoreServices/SystemVersion.plist"
 complete -W 'status up halt box ssh destroy' vg
 
 # alias for git
