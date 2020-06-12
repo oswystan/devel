@@ -55,3 +55,13 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+# vagrant with kvm
+
+## install
+
+```bash
+$ sudo yum install qemu libvirt libvirt-devel ruby-devel gcc qemu-kvm
+$ vagrant plugin install vagrant-libvirt
+$ vagrant box add generic/centos6
+```
+
