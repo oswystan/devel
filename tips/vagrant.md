@@ -60,8 +60,13 @@ end
 ## install
 
 ```bash
-$ sudo yum install qemu libvirt libvirt-devel ruby-devel gcc qemu-kvm
-$ vagrant plugin install vagrant-libvirt
-$ vagrant box add generic/centos6
+
+$ cat /proc/cpuinfo | egrep 'vmx|svm'
+$ yum install -y qemu libvirt libvirt-devel ruby-devel gcc qemu-kvm
+$ rpm -Uvh vagrant_2.2.4_x86_64.rpm
+$ vagrant plugin install --plugin-clean-sources --plugin-source https://gems.ruby-china.com/ vagrant-libvirt
+$ vagrant plugin list
+$ wget http://mirrors.ustc.edu.cn/centos-cloud/centos/6/vagrant/x86_64/images/CentOS-6.LibVirt.box
+
 ```
 
