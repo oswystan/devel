@@ -70,3 +70,18 @@ $ wget http://mirrors.ustc.edu.cn/centos-cloud/centos/6/vagrant/x86_64/images/Ce
 
 ```
 
+## configure
+
+```bash
+## add the following env in ~/.bashrc
+export VAGRANT_LIBVIRT_VIRT_SYSPREP_OPERATIONS="-ssh-hostkeys,-lvm-uuids,defaults"
+export VAGRANT_LIBVIRT_VIRT_SYSPREP_OPTIONS="--ssh-inject vagrant:file:./vagrant.pub"
+export LIBGUESTFS_BACKEND=direct
+
+## close SELinux in base box
+$ vim /etc/selinux/config
+SELINUX=disabled
+
+
+```
+

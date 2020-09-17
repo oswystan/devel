@@ -96,6 +96,24 @@ uts() {
         date +'%Y-%m-%d %H:%M:%S' -d @$1
     fi
 }
+uts.ms() {
+    if [[ $# -eq 0 ]]; then
+        date +%s%N|cut -c -13
+    else
+        local seconds=$(echo $1|cut -c -10)
+        local date_str="$(date +'%Y-%m-%d %H:%M:%S' -d @$seconds).$(echo $1|cut -c 11-)"
+        echo $date_str
+    fi
+}
+uts.ns() {
+    if [[ $# -eq 0 ]]; then
+        date +%s%N
+    else
+        local seconds=$(echo $1|cut -c -10)
+        local date_str="$(date +'%Y-%m-%d %H:%M:%S' -d @$seconds).$(echo $1|cut -c 11-)"
+        echo $date_str
+    fi
+}
 
 ###################################
 ## clone github project
