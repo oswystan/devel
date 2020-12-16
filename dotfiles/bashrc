@@ -309,8 +309,9 @@ export GOROOT="/usr/local/go"
 export GOPATH="$HOME/usr/go"
 export PATH="${PATH}:${GOROOT}/bin:${GOPATH}/bin"
 
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US:en
+#export LANG="en_US.UTF-8"
+#export LANGUAGE="en_US:en"
+export LC_ALL="en_US.UTF-8"
 
 export PS1='\u:\w>'
 ######################################################################
