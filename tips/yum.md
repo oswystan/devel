@@ -17,6 +17,7 @@ this is a guideline for how to create a local yum repository to speed up your yu
 
 ```shell
 ## download rpm files
+$ wget -e robots=off -r -k -c -A .rpm -np https://vault.centos.org/7.6.1810/sclo/x86_64/rh/devtoolset-4/
 $ wget -e robots=off -r -k -c -A .rpm -np http://mirrors.163.com/centos/6/sclo/x86_64/sclo/sclo-git212/
 $ wget --reject-regex=.*eclipse.* -e robots=off -r -k -c -A .rpm -np http://mirrors.163.com/centos/6.10/sclo/x86_64/rh/devtoolset-4/
 
