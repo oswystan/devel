@@ -48,8 +48,10 @@ if has("cscope")
         let i = 0
         while i < 20
             let filename = currentPath . "/cscope.out"
+            let tagfile = currentPath . "/tags"
             if filereadable(filename)
                 exe "cs add" filename
+                execute ":set tags=".tagfile
                 break
             endif
             let currentPath = currentPath . "/.."
