@@ -39,7 +39,7 @@ fi
 ###################################
 btags()
 {
-    find . -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.cc" -o -name "*.java" >cscope.files
+    find $PWD -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.cc" -o -name "*.java" >cscope.files
     ctags -L ./cscope.files
     cscope -b
 }

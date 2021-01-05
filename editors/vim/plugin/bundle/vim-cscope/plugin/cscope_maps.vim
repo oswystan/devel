@@ -43,6 +43,18 @@ if has("cscope")
     " else add the database pointed to by environment variable 
     elseif $CSCOPE_DB != ""
         cs add $CSCOPE_DB
+    else
+        let currentPath = expand("%:p:h")
+        let i = 0
+        while i < 20
+            let filename = currentPath . "/cscope.out"
+            if filereadable(filename)
+                exe "cs add" filename
+                break
+            endif
+            let currentPath = currentPath . "/.."
+            let i = i + 1
+        endwhile
     endif
 
     " show msg when any other cscope db added
