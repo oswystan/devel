@@ -46,7 +46,7 @@ if has("cscope")
     else
         let currentPath = expand("%:p:h")
         let i = 0
-        while i < 20
+        while (currentPath != '/')
             let filename = currentPath . "/cscope.out"
             let tagfile = currentPath . "/tags"
             if filereadable(filename)
@@ -54,8 +54,8 @@ if has("cscope")
                 execute ":set tags=".tagfile
                 break
             endif
-            let currentPath = currentPath . "/.."
-            let i = i + 1
+            let currentPath = fnamemodify(currentPath, ':h')
+            "echo currentPath
         endwhile
     endif
 
