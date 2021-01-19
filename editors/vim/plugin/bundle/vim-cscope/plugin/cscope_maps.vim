@@ -30,6 +30,9 @@ if has("cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
 
+    " show msg when any other cscope db added
+    set nocscopeverbose  
+
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
     set cscopetag
 
@@ -58,9 +61,6 @@ if has("cscope")
             "echo currentPath
         endwhile
     endif
-
-    " show msg when any other cscope db added
-    set cscopeverbose  
 
 
     """"""""""""" My cscope/vim key mappings
