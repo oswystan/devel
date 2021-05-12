@@ -35,3 +35,5 @@
     changed = 198
     untracked = 11
     nobranch = 242
+[pull]
+	rebase = true
