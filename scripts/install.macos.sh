@@ -23,6 +23,7 @@ install_basic() {
     brew install ctags cscope git cloc sloccount dos2unix subversion
     brew install vim tmux tree wget
     brew install openconnect
+    sudo gem install iStats
 }
 
 install_android() {
