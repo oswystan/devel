@@ -24,6 +24,7 @@ install_basic() {
     brew install vim tmux tree wget
     brew install openconnect
     sudo gem install iStats
+    ## install sizeup
 }
 
 install_android() {
