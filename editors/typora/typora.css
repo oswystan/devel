@@ -61,8 +61,8 @@ html {
 }
 
 html, body {
-	background-color: #f3f2ee;
-	font-family: "adobe-clean", "Volkhov", "PT Serif", 'Times New Roman', Times;
+	background-color: #ffffff;
+	font-family: "Volkhov", "PT Serif", 'Times New Roman', Times;
 	color: #1f0909;
 	line-height: 1.5em;
 }
@@ -306,7 +306,7 @@ td {
 
 code,
 .md-fences {
-	background-color: #dadada;
+	background-color: #f4f4f4;
 	padding-left: 1ch;
 	padding-right: 1ch;
 }
@@ -318,7 +318,7 @@ code,
 pre,
 code,
 tt {
-	font-family: 'operator mono book';
+	font-family: 'operator mono';
 	font-size: .875em;
 	line-height: 1.714285em;
 }
