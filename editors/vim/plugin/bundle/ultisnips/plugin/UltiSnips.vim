@@ -15,9 +15,9 @@ if !exists("g:UltiSnipsUsePythonVersion")
    if !has("python3")
        if !has("python")
            if !exists("g:UltiSnipsNoPythonWarning")
-               echohl WarningMsg
-               echom  "UltiSnips requires py >= 2.7 or py3"
-               echohl None
+               "echohl WarningMsg
+               "echom  "UltiSnips requires py >= 2.7 or py3"
+               "echohl None
            endif
            unlet g:_uspy
            finish

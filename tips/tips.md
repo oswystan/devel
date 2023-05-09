@@ -75,6 +75,8 @@ Host ubuntu
 ## change /etc/ssh/sshd_config
 UseDNS no
 GSSAPIAuthentication no
+## change /etc/ssh/ssh_config
+StrictHostKeyChecking no
 
 ## then restart sshd
 $ sudo service sshd restart

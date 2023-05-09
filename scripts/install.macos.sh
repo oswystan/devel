@@ -20,8 +20,7 @@ install_homebrew() {
 }
 
 install_basic() {
-    brew install ctags cscope git cloc sloccount dos2unix subversion
-    brew install vim tmux tree wget
+    brew install ctags cscope git cloc sloccount dos2unix tree wget vim tmux
     brew install openconnect
     sudo gem install iStats
     ## install sizeup
@@ -50,6 +49,12 @@ change_route() {
 bugfix() {
     ## inactive cmdline tool: xrun
     xcode-select --install
+
+    ## clear passwd security policy
+    sudo pwpolicy clearaccountpolicies
+
+    ## change shell to bash
+    chsh -s /bin/bash
 }
 
 #######################################################

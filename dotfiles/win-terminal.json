@@ -45,7 +45,8 @@
         "defaults": 
         {
             "cursorColor": "#00FFFF",
-            "cursorShape": "filledBox"
+            "cursorShape": "filledBox",
+            "fontFace" : "Operator Mono"
         },
         "list": 
         [
@@ -63,12 +64,7 @@
             },
             {
                 "antialiasingMode": "cleartype",
-                "bellStyle": 
-                [
-                    "window",
-                    "taskbar"
-                ],
-                "colorScheme": "One Half Dark",
+                "colorScheme": "One Half Dark", 
                 "commandline": "wsl.exe -d Ubuntu-20.04 -u winner",
                 "cursorShape": "filledBox",
                 "font": 
@@ -310,3 +306,4 @@
     "windowingBehavior": "useNew",
     "wordDelimiters": " /\\()\"',:;<>~!@#$%^&*|+=[]{}~?\u2502"
 }
+
