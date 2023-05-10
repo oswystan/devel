@@ -1,0 +1,23 @@
+{
+  "init": {
+    "prefix": "init",
+    "body": [
+        "#!/usr/bin/env node",
+        "/*",
+        " *******************************************************************************",
+        " *                   Copyright (C) $CURRENT_YEAR wystan",
+        " *",
+        " *        filename: $TM_FILENAME",
+        " *     description: $1",
+        " *         created: $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+        " *          author: wystan",
+        " *",
+        " *******************************************************************************",
+        " */",
+        "",
+        "",
+        "/******************************************************************************/"
+    ],
+    "description": "init empty file"
+  }
+}
