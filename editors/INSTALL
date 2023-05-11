@@ -15,7 +15,13 @@ setup_vim() {
     ln -s $PWD/vim/vimrc ~/.vimrc
     ln -s $PWD/vim/plugin ~/.vim
 }
+setup_lvim() {
+    local dir="${HOME}/.config/lvim"
+    rm -rf ${dir}
+    ln -s $PWD/lvim ${dir}
+}
 
 ###########################################################################
 echo "==>install editors..."
 setup_vim
+setup_lvim
