@@ -18,6 +18,7 @@ vim.opt.shiftwidth  = 4
 vim.opt.expandtab   = true
 vim.opt.ignorecase  = true
 vim.opt.guicursor   = "a:block"
+vim.opt.whichwrap   = "<,>"
 vim.cmd[[au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif]]
 
 ----------------------------------
