@@ -40,15 +40,27 @@
 # office tools
 
 - web browser：brave & bookmarks
+
 - vpn：clashX
+
 - fonts
     - coding fonts
     - book fonts
 
 - screen saver: Fliqlo
+
 - office: ms-office / wps
+
 - markdown: typora
+
 - evernote
+
+- iStats
+
+    ```bash
+    $ brew install ruby
+    $ sudo gem install iStats
+    ```
 
 # dev tools
 

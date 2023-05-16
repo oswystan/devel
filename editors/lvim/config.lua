@@ -44,6 +44,7 @@ lvim.plugins = {
     {"scrooloose/nerdtree"},
     {"majutsushi/tagbar"},
     {"godlygeek/tabular"},
+    {"ntpeters/vim-better-whitespace"},
     {"vim-scripts/a.vim"}
 }
 
