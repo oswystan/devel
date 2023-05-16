@@ -4,12 +4,12 @@
 
 ``` shell
     
-    sudo apt install -y vim cscope ctags gcc g++ 
-    sudo apt install -y git subversion sloccount tmux                                                                                   
-    sudo apt install -y manpages-posix-dev
-    sudo apt install -y gnome-tweak-tool # unity-tweak-tool
-    sudo apt install -y meld
-    sudo wget https://github.com/AlDanial/cloc/releases/download/v1.76/cloc-1.76.pl -O /usr/bin/cloc && sudo chmod +x /usr/bin/cloc
+sudo apt install -y vim cscope ctags gcc g++ 
+sudo apt install -y git subversion sloccount tmux                                                                                   
+sudo apt install -y manpages-posix-dev
+sudo apt install -y gnome-tweak-tool # unity-tweak-tool
+sudo apt install -y meld
+sudo wget https://github.com/AlDanial/cloc/releases/download/v1.76/cloc-1.76.pl -O /usr/bin/cloc && sudo chmod +x /usr/bin/cloc
     
 ```
 
