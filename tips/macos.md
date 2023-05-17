@@ -1,37 +1,27 @@
+**Table of contents**
+[TOC]
+
 # system setting
-
 - network setting for WiFi
-
 - clean dock bar
-
 - login Apple ID
-
 - Finder setting
-
 - key board / touch panel / mouse settings
-
 - ssh
-
     ```bash
     $ sudo vim /etc/ssh/ssh_config
-    
     ## add the following config item 'StrictHostKeyChecking no'
     ## the ssh client will add unknown host directly
     Host *
         StrictHostKeyChecking no
     ```
-
 - sudo
-
     ```bash
     $ sudo vim /etc/sudoers
-    
     ## add the following content and replace 'yourusername' to your own user name
     yourusername   ALL=(ALL) NOPASSWD: ALL
     ```
-
 - password & sec policy:
-
     ```bash
     $ pwpolicy -clearaccountpolicies
     $ passwd
@@ -59,7 +49,6 @@
     export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
     export HOMEBREW_NO_AUTO_UPDATE=true
     ```
-    
 - command line tools
 ```bash
 $ brew install vim wget git tree dos2unix bash-completion ruby
@@ -77,9 +66,6 @@ $ sudo gem install iStats
     127.0.0.1 license.sublimehq.com
     127.0.0.1 www.sublimetext.com
     ```
-    
     - [vscode](https://code.visualstudio.com/)
-    
         > replace https://az764295.vo.msecnd.net with http://vscode.cdn.azure.cn for fast downloading speed in China.
-    
 - linux dev: [orbstack](https://orbstack.dev/download)
