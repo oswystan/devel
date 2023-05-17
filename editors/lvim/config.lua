@@ -27,6 +27,7 @@ vim.cmd[[au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("no
 lvim.leader = ","
 lvim.keys.normal_mode["<leader>z"] = ":qa!<CR>"
 lvim.keys.normal_mode["<leader>x"] = ":wqa!<CR>"
+lvim.keys.normal_mode["<leader>n"] = ":set nonu<CR>"
 lvim.keys.normal_mode["H"]         = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["L"]         = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<leader>t"] = ":TagbarToggle<CR>"
