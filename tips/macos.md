@@ -1,10 +1,10 @@
 # system setting
 
+- network setting for WiFi
+
 - clean dock bar
 
 - login Apple ID
-
-- network setting for WiFi
 
 - Finder setting
 
