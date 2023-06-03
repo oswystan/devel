@@ -11,14 +11,15 @@
 ----------------------------------
 -- base options
 ----------------------------------
-vim.opt.mouse       = nil
-vim.opt.tabstop     = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth  = 4
-vim.opt.expandtab   = true
-vim.opt.ignorecase  = true
-vim.opt.guicursor   = "a:block"
-vim.opt.whichwrap   = "<,>"
+vim.opt.mouse          = nil
+vim.opt.tabstop        = 4
+vim.opt.softtabstop    = 4
+vim.opt.shiftwidth     = 4
+vim.opt.expandtab      = true
+vim.opt.ignorecase     = true
+vim.opt.relativenumber = true
+vim.opt.guicursor      = "a:block"
+vim.opt.whichwrap      = "<,>"
 vim.cmd[[au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif]]
 
 ----------------------------------

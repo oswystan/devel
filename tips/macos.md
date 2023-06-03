@@ -67,5 +67,6 @@ $ sudo gem install iStats
     127.0.0.1 www.sublimetext.com
     ```
     - [vscode](https://code.visualstudio.com/)
-        > replace https://az764295.vo.msecnd.net with http://vscode.cdn.azure.cn for fast downloading speed in China.
+        
+        > replace https://az764295.vo.msecnd.net with https://vscode.cdn.azure.cn for fast downloading speed in China.
 - linux dev: [orbstack](https://orbstack.dev/download)
