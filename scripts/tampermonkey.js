@@ -9,16 +9,16 @@
 // ==/UserScript==
 
 /* 字体 */
-GM_addStyle("*{font-family: '幼圆',FZS3JW,SourceHanSerifCN-Medium,Kaiti,STKaiti,FangSong, SimSun; !important;}");
+GM_addStyle("*{font-family: yuanti sc,FZS3JW,SourceHanSerifCN-Medium,Kaiti,STKaiti,FangSong, SimSun; !important;}");
 
 /* 顶部工具栏 */
-GM_addStyle(".readerTopBar{max-width:90%; font-family: '幼圆' !important;}");
+GM_addStyle(".readerTopBar{max-width:90%; font-family: yuanti sc !important;}");
 /* 书标题 */
-GM_addStyle(".readerTopBar_title .readerTopBar_title_link{font-family: '幼圆'; !important; font-weight:bold !important;}");
+GM_addStyle(".readerTopBar_title .readerTopBar_title_link{font-family: yuanti sc; !important; font-weight:bold !important;}");
 /* 当前章节标题 */
-GM_addStyle(".readerTopBar_title .readerTopBar_title_chapter{font-family: '幼圆' !important;}");
+GM_addStyle(".readerTopBar_title .readerTopBar_title_chapter{font-family: yuanti sc !important;}");
 /* 去书架查看 */
-GM_addStyle(".readerTopBar_actions .addShelfItem{font-family: '幼圆' !important;}");
+GM_addStyle(".readerTopBar_actions .addShelfItem{font-family: yuanti sc !important;}");
 /* 背影色 */
 GM_addStyle(".wr_whiteTheme .renderTargetContainer .renderTargetContent .wr_readerImage_opacity {background-color: rgba(249,243,232,100) !important;}");
 GM_addStyle(".wr_whiteTheme .renderTargetContainer .renderTargetContent .wr_readerBackground_opacity{background-color: rgba(249,243,232,100) !important;}");
@@ -31,13 +31,13 @@ GM_addStyle(".readerChapterContent{color: rgba(94,64,40,100) !important;}");
 GM_addStyle(".readerChapterContent{font-weight: normal !important;}");
 
 /* 笔记 */
-GM_addStyle(".readerNotePanel .selectionListItem{border:5px solid  #f00; font-family: '幼圆';!important;}");
+GM_addStyle(".readerNotePanel .selectionListItem{border:5px solid  #f00; font-family: yuanti sc;!important;}");
 
 /* 目录 */
-GM_addStyle(".readerCatalog h2.readerCatalog_bookInfo_title .readerCatalog_bookInfo_title_txt{font-family: '幼圆',SourceHanSerifCN-Bold !important;}");
-GM_addStyle(".readerCatalog ul.readerCatalog_list li.chapterItem span.chapterItem_text{font-family: '幼圆',SourceHanSerifCN-Light !important;}");
-GM_addStyle(".readerCatalog ul.readerCatalog_list li.chapterItem_current{border:5px solid #ccc; font-family: '幼圆',SourceHanSerifCN-Bold !important;}");
-GM_addStyle(".readerCatalog ul.readerCatalog_list li.chapterItem_current span.chapterItem_text{font-family: '幼圆',SourceHanSerifCN-Bold !important;}");
+GM_addStyle(".readerCatalog h2.readerCatalog_bookInfo_title .readerCatalog_bookInfo_title_txt{font-family: yuanti sc !important;}");
+GM_addStyle(".readerCatalog ul.readerCatalog_list li.chapterItem span.chapterItem_text{font-family: yuanti sc !important;}");
+GM_addStyle(".readerCatalog ul.readerCatalog_list li.chapterItem_current{border:5px solid #ccc; font-family: yuanti sc !important;}");
+GM_addStyle(".readerCatalog ul.readerCatalog_list li.chapterItem_current span.chapterItem_text{font-family: yuanti sc !important;}");
 
 /*以下为拼接进来的*/
 /* readerControls */
@@ -45,7 +45,7 @@ GM_addStyle(".readerControls{padding:0,100; !important;}");
 
 
 /* 下一页 */
-GM_addStyle(".readerFooter .readerFooter_button {font-family: '幼圆' !important;}");
+GM_addStyle(".readerFooter .readerFooter_button {font-family: yuanti sc;}");
 
 (function() {
     'use strict';
