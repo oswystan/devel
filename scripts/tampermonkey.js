@@ -24,7 +24,7 @@ GM_addStyle(".wr_whiteTheme .renderTargetContainer .renderTargetContent .wr_read
 GM_addStyle(".wr_whiteTheme .renderTargetContainer .renderTargetContent .wr_readerBackground_opacity{background-color: rgba(249,243,232,100) !important;}");
 GM_addStyle(".wr_readerBackground_opacity, .wr_readerImage_opacity {opacity: 0.2 !important;}");
 /* 配图不透明度 边框 */
-GM_addStyle("img.wr_readerImage_opacity {opacity: 1.0 !important;border:5px solid #ccc; margin:5px; padding:5px;}");
+GM_addStyle("img.wr_readerImage_opacity {opacity: 1.0 !important;border:0px solid #ccc; margin:5px; padding:5px;}");
 
 GM_addStyle(".wr_whiteTheme .readerContent .app_content{background-color: rgba(249,243,232,100) !important;}");
 GM_addStyle(".readerChapterContent{color: rgba(94,64,40,100) !important;}");
