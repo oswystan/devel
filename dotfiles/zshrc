@@ -5,7 +5,7 @@
 ##################################################################
 
 ## PATH
-export PATH="/opt/homebrew/bin:${PATH}"
+export PATH="/opt/homebrew/bin:$HOME/.local/bin:${PATH}"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 ## homebrew
