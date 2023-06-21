@@ -1,0 +1,103 @@
+##################################################################
+##
+## zsh configurations
+##
+##################################################################
+
+## PATH
+export PATH="/opt/homebrew/bin:${PATH}"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+## homebrew
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+export HOMEBREW_NO_AUTO_UPDATE=true
+
+## misc
+export LC_ALL="en_US.UTF-8"
+
+## alias
+alias cls="clear && printf '\033c'"
+alias ll="ls -l"
+alias la="ls -la"
+alias df="df -h"
+alias u2g="iconv -f gbk -t utf-8 "
+alias g2u="iconv -t gbk -f utf-8 "
+alias ..='cd ..'
+alias ...='cd ../..'
+if [ `uname` = "Darwin" ]; then
+    alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+    alias lsusb="system_profiler SPUSBDataType"
+    alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+fi
+
+#################################
+## vpn
+#################################
+function vpn.on() {
+    export https_proxy=http://127.0.0.1:7890 
+    export http_proxy=http://127.0.0.1:7890 
+    export all_proxy=socks5://127.0.0.1:7890
+}
+
+function vpn.off() {
+    export https_proxy= http_proxy= all_proxy=
+}
+
+#################################
+## compression & decompression
+#################################
+function z() {
+    if [ $# -ne 1 ]; then
+        echo "usage: z <file|directory>"
+        return 1
+    fi
+    tar Jcvf $1.tar.xz $1
+}
+
+function x() {
+    if [ $# -ne 1 ]; then
+        echo "usage: x <file>"
+        return 1
+    fi
+    if [ ! -f $1 ]; then
+        echo "ERROR: no such file [$1]"
+        return 1
+    fi
+    case $1 in
+        *.tar.bz2)
+            tar jxvf $1
+            ;;
+        *.tar.gz|*.tgz)
+            tar zxvf $1
+            ;;
+        *.tar.xz)
+            tar Jxvf $1
+            ;;
+        *.rar)
+            unrar x $1
+            ;;
+        *.zip)
+            unzip  $1
+            ;;
+        *)
+            echo "ERROR: unknown file format"
+    esac
+}
+
+###################################
+## github commands
+###################################
+hub()
+{
+    if [[ $# -eq 0 ]]; then
+        cd $HOME/usr/project/github
+        return 0;
+    fi
+    echo "==>start clone $1..." &&
+        git clone git@github.com:oswystan/$1 &&
+        cd $1 &&
+        git config --local user.name "oswystan" &&
+        git config --local user.email "oswystan@126.com" &&
+        cd - &&
+    echo "==>succ" || echo "==>fail!!"
+}
