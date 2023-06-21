@@ -37,3 +37,6 @@
     nobranch = 242
 [pull]
 	rebase = true
+[user]
+	email = oswystan@126.com
+	name = wystan
