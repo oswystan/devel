@@ -5,8 +5,8 @@
 ##################################################################
 
 ## PATH
-export PATH="/opt/homebrew/bin:$HOME/.local/bin:${PATH}"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH=/opt/homebrew/bin:$HOME/.local/bin:${PATH}
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 
 ## homebrew
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
@@ -17,6 +17,7 @@ export LC_ALL="en_US.UTF-8"
 
 ## alias
 alias cls="clear && printf '\033c'"
+alias ls=lsd
 alias ll="ls -l"
 alias la="ls -la"
 alias df="df -h"
@@ -101,3 +102,4 @@ hub()
         cd - &&
     echo "==>succ" || echo "==>fail!!"
 }
+
