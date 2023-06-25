@@ -26,6 +26,8 @@ opt.whichwrap   = "<,>"
 
 g.mapleader = ","
 
+g.vscode_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
+
 -- goto last postion
 cmd [[au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif]]
 
