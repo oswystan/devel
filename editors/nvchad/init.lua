@@ -1,45 +1,21 @@
--------------------------------------------------------------------------------
---                  Copyright (C) 2023 wystan
---
---       filename: init.lua
---    description: init configuration for nvchad
---        created: 2023/06/24
---         author: wystan
---
--------------------------------------------------------------------------------
-local opt = vim.opt
-local g   = vim.g
-local cmd = vim.cmd
+require "core"
 
---------------------
--- base options
---------------------
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
-opt.mouse       = nil
-opt.tabstop     = 4
-opt.softtabstop = 4
-opt.shiftwidth  = 4
-opt.expandtab   = true
-opt.ignorecase  = true
-opt.guicursor   = "a:block"
-opt.whichwrap   = "<,>"
+if custom_init_path then
+  dofile(custom_init_path)
+end
 
-g.mapleader = ","
+require("core.utils").load_mappings()
 
-g.vscode_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
--- goto last postion
-cmd [[au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif]]
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
 
--- toggle quickfix window borrowed from lvim
-cmd [[
-  function! QuickFixToggle()
-    if empty(filter(getwininfo(), 'v:val.quickfix'))
-      copen
-    else
-      cclose
-    endif
-  endfunction
-]]
-
--------------------------------------------------------------------------------
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"

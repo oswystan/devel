@@ -1,8 +1,7 @@
-# usage
-- copy all lua files to ~/.config/nvim/lua/custom
-- change search icon in 
-    - ~/.config/nvim/lua/plugins/configs/telescope.lua
-      prompt_prefix = "   "
-    - ~/.config/nvim/lua/core/default_config.lua
+# About
+This is a fork repo from https://github.com/NvChad/NvChad.
 
-> that is because the original nerd icon can not be displayed correctly in iterm2 v3.4.x
+More features or bugfix:
+- iterm2 nerd font icon can not be displayed on telescope UI
+- add custom directory for my private configurations
+- add snippets for c/cpp, lua, javascript, bash
