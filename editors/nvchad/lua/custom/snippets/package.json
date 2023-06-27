@@ -21,8 +21,10 @@
       }, {
         "language": "c",
         "path": "./c.json"
+      }, {
+        "language": "make",
+        "path": "./make.json"
       }
-
     ]
   }
 }
