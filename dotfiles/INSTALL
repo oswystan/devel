@@ -11,10 +11,10 @@
 
 ## setup bashrc
 setup_bashrc() {
-    rc_file="$PWD/bashrc"
-    is_exist=`grep $rc_file ~/.bashrc | wc -l`
-    if [ $is_exist -le 0 ]; then
-        cat >>~/.bashrc <<!EOF
+  rc_file="$PWD/bashrc"
+  is_exist=$(grep $rc_file ~/.bashrc | wc -l)
+  if [ $is_exist -le 0 ]; then
+    cat >>~/.bashrc <<!EOF
 
 ##############################################################
 if [ -f $rc_file ]; then
@@ -23,26 +23,26 @@ fi
 ##############################################################
 
 !EOF
-    fi
+  fi
 }
 
 ## setup tmux configuration
 setup_tmux() {
-    rm -f ~/.tmux.conf && ln -s $PWD/tmux.conf ~/.tmux.conf
+  rm -f ~/.tmux.conf && ln -s $PWD/tmux.conf ~/.tmux.conf
 }
 
 ## setup clang-format
 setup_clang() {
-    rm -f ~/.clang-format && ln -s $PWD/clang-format ~/.clang-format
+  rm -f ~/.clang-format && ln -s $PWD/clang-format ~/.clang-format
 }
 
 ## setup git
 setup_git() {
-    cp gitconfig ~/.gitconfig
-    git_ver=`git --version|cut -d' ' -f3`
-    git config --global user.name oswystan
-    git config --global user.email oswystan@126.com
-    [[ $ver > '1.7.10' ]] && git config --global push.default simple
+  cp gitconfig ~/.gitconfig
+  ver=$(git --version | cut -d' ' -f3)
+  git config --global user.name oswystan
+  git config --global user.email oswystan@126.com
+  [[ $ver > '1.7.10' ]] && git config --global push.default simple
 }
 
 ###########################################################################
