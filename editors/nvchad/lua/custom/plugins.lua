@@ -1,4 +1,3 @@
-
 -------------------------------------------------------------------------------
 --                  Copyright (C) 2023 wystan
 --
@@ -23,20 +22,20 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require("custom.configs.null-ls")
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end, -- Override to setup mason-lspconfig
   },
 
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -57,10 +56,25 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-  {"majutsushi/tagbar", lazy = false},
-  {"godlygeek/tabular", lazy = false},
-  {"ntpeters/vim-better-whitespace", lazy = false},
-  {"vim-scripts/a.vim", lazy=false},
+  { "majutsushi/tagbar", lazy = false },
+  { "godlygeek/tabular", lazy = false },
+  { "ntpeters/vim-better-whitespace", lazy = false },
+  { "vim-scripts/a.vim", lazy = false },
+  {
+    "NvChad/nvterm",
+    opts = {
+      terminals = {
+        type_opts = {
+          float = {
+            row = 0.15,
+            col = 0.1,
+            width = 0.8,
+            height = 0.7,
+          },
+        },
+      },
+    },
+  },
 
   -- To make a plugin not be loaded
   -- {
