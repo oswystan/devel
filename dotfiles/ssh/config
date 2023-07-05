@@ -1,0 +1,9 @@
+Host oswystan.github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github/oswystan.github
+
+Host ticktechman.github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github/ticktechman.github
