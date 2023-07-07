@@ -8,13 +8,6 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=feishu.cn
 // @grant        GM_addStyle
 // ==/UserScript==
-
-// code block style
-GM_addStyle(".editor-kit-code-block .code-block-content {font-family: monospace; font-size: 1.2em;}");
-
-// inline code style
-GM_addStyle(".inline-code {font-family: monospace; font-size: 1.1em;}");
-
 (function() {
     'use strict';
 
@@ -23,8 +16,13 @@ GM_addStyle(".inline-code {font-family: monospace; font-size: 1.1em;}");
             // console.log("DEBUG");
             let e = document.getElementById("zh-CN");
             if(e != null) {
-                e.style.fontFamily = "yuanti sc";
+                e.style.fontFamily = "sans";
             }
+            // code block style
+            GM_addStyle(".editor-kit-code-block .code-block-content {font-family: monospace; font-size: 1.2em;}");
+
+            // inline code style
+            GM_addStyle(".inline-code {font-family: monospace; font-size: 1.1em;}");
         }, 2000);
     });
 })();
