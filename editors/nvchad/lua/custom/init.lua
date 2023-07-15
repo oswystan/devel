@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
---                  Copyright (C) 2023 wystan
+--                  Copyright (C) 2023 ticktech
 --
 --       filename: init.lua
 --    description: init configuration for nvchad
 --        created: 2023/06/24
---         author: wystan
+--         author: ticktech
 --
 -------------------------------------------------------------------------------
 local opt = vim.opt
@@ -16,13 +16,11 @@ local autocmd = vim.api.nvim_create_autocmd
 -- base options
 --------------------
 opt.mouse = nil
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.ignorecase = true
-opt.guicursor = "a:block"
-opt.whichwrap = "<,>"
 
 g.mapleader = ","
 

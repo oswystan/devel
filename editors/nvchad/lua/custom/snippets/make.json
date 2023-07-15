@@ -4,7 +4,6 @@
     "body": [
         "#!/usr/bin/env bash",
         "###############################################################################",
-        "##                  Copyright (C) $CURRENT_YEAR wystan",
         "##",
         "##       filename: $TM_FILENAME",
         "##    description: $1",

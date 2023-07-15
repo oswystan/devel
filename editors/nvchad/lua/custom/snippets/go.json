@@ -3,7 +3,6 @@
     "prefix": "init",
     "body": [
         "//-----------------------------------------------------------------------------",
-        "//                  Copyright (C) $CURRENT_YEAR wystan",
         "//",
         "//       filename: $TM_FILENAME",
         "//    description: $1",
