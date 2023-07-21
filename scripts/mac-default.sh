@@ -94,11 +94,6 @@ function defaults.import() {
 function defaults.domains() {
   defaults domains | tr ',' '\n'
 }
-function defaults.domains.export() {
-  for one in $(defaults.domains); do
-    defaults.export "$one"
-  done
-}
 
 function defaults.all.export() {
   for one in "${default_all_export[@]}"; do
