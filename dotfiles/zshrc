@@ -21,7 +21,7 @@ alias vi=nvim
 alias cls="clear && printf '\033c'"
 alias ls=lsd
 alias ll="ls -l"
-alias la="ls -la"
+alias la="ls -lA"
 alias df="df -h"
 alias u2g="iconv -f gbk -t utf-8 "
 alias g2u="iconv -t gbk -f utf-8 "
@@ -127,3 +127,4 @@ ttm() {
 ttm.key() {
   ssh-keygen -t ed25519 -C "ticktechman@github" -f ticktechman.github
 }
+
