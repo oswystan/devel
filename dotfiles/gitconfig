@@ -1,18 +1,18 @@
 [core]
-	editor = vim
+    editor = vim
     pager = less -x1,5
 [credential]
-	helper = cache
+    helper = cache
 [log]
     date = iso
 [alias]
-	st = status -s
-	ci = commit
-	co = checkout
-	br = branch -vv
-	cl = clean -fd
-	df = diff
-	lg = log --name-status
+    st = status -s
+    ci = commit
+    co = checkout
+    br = branch -vv
+    cl = clean -fd
+    df = diff
+    lg = log --name-status
 [color]
     ui = auto
 [color "diff"]
@@ -36,7 +36,7 @@
     untracked = 11
     nobranch = 242
 [pull]
-	rebase = true
+    rebase = true
 [user]
-	email = oswystan@126.com
-	name = wystan
+    email = oswystan@126.com
+    name = wystan
