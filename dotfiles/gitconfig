@@ -1,5 +1,6 @@
+#####
 [core]
-    editor = vim
+    editor = nvim
     pager = less -x1,5
 [credential]
     helper = cache
