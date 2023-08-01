@@ -10,8 +10,8 @@
 ###########################################################################
 
 error() {
-    echo "ERROR: $*"
-    exit 1
+  echo "ERROR: $*"
+  exit 1
 }
 
 [[ $# -ne 1 ]] && error "usage: git changelog <tag>"
@@ -25,12 +25,12 @@ echo "baseline: $from"
 echo ""
 echo "new-features:"
 echo "-------------"
-git log ${from}..HEAD --grep="feature:" --oneline
+git --no-pager log "${from}..HEAD" --grep="^feature:" --oneline
 
 echo ""
 echo "bugfix:"
 echo "-------------"
-git log ${from}..HEAD --grep="bugfix:" --oneline
+git --no-pager log "${from}..HEAD" --grep="^bugfix:" --oneline
 echo ""
 
 ###########################################################################

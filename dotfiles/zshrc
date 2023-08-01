@@ -128,6 +128,10 @@ ttm.key() {
   ssh-keygen -t ed25519 -C "ticktechman@github" -f ticktechman.github
 }
 
+###################################
+## highlight a file and 
+## copy the rich text to system clipboard
+###################################
 hl() {
   [[ $# -ne 1 ]] && {
     echo "Usage: hl <file>"
