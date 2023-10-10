@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+###############################################################################
+##
+##       filename: a.py
+##    description: 
+##        created: 2023/10/10
+##         author: ticktechman
+##
+###############################################################################
+
+import sys
+from fontTools.ttLib import TTFont
+
+def get_font_name(ttf_file_path):
+    try:
+        font = TTFont(ttf_file_path)
+        font_name = None
+
+        # Try to extract the preferred family name, which typically contains the font's name.
+        for record in font['name'].names:
+            if record.nameID == 1:  # Preferred Family Name
+                font_name = record.string.decode('utf-8')
+                break
+
+        if font_name:
+            return font_name
+        else:
+            return "Font name not found in the TTF file."
+
+    except Exception as e:
+        return str(e)
+
+if __name__ == "__main__":
+    ttf_file_path = sys.argv[1]  # Replace with the path to your TTF file
+    font_name = get_font_name(ttf_file_path)
+    print("Font Name:", font_name)
+
+###############################################################################
