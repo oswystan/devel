@@ -14,7 +14,8 @@
     window.addEventListener("load", (event) => {
         setTimeout(()=>{
             // console.log("DEBUG");
-            let e = document.getElementById("zh-CN");
+            let e = document.getElementById("en-US");
+            // let e = document.getElementById("zh-CN");
             if(e != null) {
                 e.style.fontFamily = "sans";
             }
