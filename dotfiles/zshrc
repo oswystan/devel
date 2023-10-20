@@ -137,5 +137,5 @@ hl() {
     echo "Usage: hl <file>"
     return 1
   }
-  highlight -O rtf --font 'Agave Nerd Font' --font-size 24 --style molokai "$1" | pbcopy
+  highlight -O rtf --font 'mplus Nerd Font' --font-size 24 --style molokai "$1" | pbcopy
 }
