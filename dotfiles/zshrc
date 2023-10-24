@@ -129,7 +129,7 @@ ttm.key() {
 }
 
 ###################################
-## highlight a file and 
+## highlight a file and
 ## copy the rich text to system clipboard
 ###################################
 hl() {
