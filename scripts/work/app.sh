@@ -27,11 +27,13 @@ app.icons.ios() {
     "Icon-App-83.5x83.5@2x.png|167"
   )
   [[ $# -ne 1 ]] && echo "usage: app.icons.ios <svg-file>" && return 1
+  [[ ! -d ios ]] && mkdir ios
   for one in ${_icons[@]}; do
     local fn="$(echo $one | cut -f 1 -d '|')"
     local width="$(echo $one | cut -f 2 -d '|')"
     echo "$fn"
-    rsvg-convert -b '#eeeeee' -w $width $1 >$fn
+    # rsvg-convert -w $width $1 >$fn
+    sips -Z $width $1 -o ios/$fn >/dev/null
   done
 }
 
@@ -46,11 +48,13 @@ app.icons.macos() {
     "app_icon_64.png|64"
   )
   [[ $# -ne 1 ]] && echo "usage: app.icons.macos <svg-file>" && return 1
+  [[ ! -d macos ]] && mkdir macos
   for one in ${_icons[@]}; do
     local fn="$(echo $one | cut -f 1 -d '|')"
     local width="$(echo $one | cut -f 2 -d '|')"
     echo "$fn"
-    rsvg-convert -w $width $1 >$fn
+    # rsvg-convert -w $width $1 >$fn
+    sips -Z $width $1 -o macos/$fn >/dev/null
   done
 }
 
@@ -63,14 +67,33 @@ app.icons.android() {
     "mipmap-xxxhdpi/ic_launcher.png|192"
   )
   [[ $# -ne 1 ]] && echo "usage: app.icons.android <svg-file>" && return 1
+  [[ ! -d android ]] && mkdir android
   for one in ${_icons[@]}; do
     local fn="$(echo $one | cut -f 1 -d '|')"
     local width="$(echo $one | cut -f 2 -d '|')"
     echo "$fn"
     local dir="$(dirname $fn)"
-    [[ ! -d $dir ]] && mkdir $dir
-    rsvg-convert -w $width $1 >$fn
+    [[ ! -d android/$dir ]] && mkdir android/$dir
+    # rsvg-convert -w $width $1 >$fn
+    sips -Z $width $1 -o android/$fn >/dev/null
   done
+}
+
+app.icons.pub() {
+  [[ $# -ne 1 ]] && echo "usage: app.icons.pub <target-base-directory>" && return 1
+  [[ ! -d "$1" ]] && echo "error: no such directory $1" && return 1
+  local target="$1/android/app/src/main/res/"
+  cp -a ./android/* $target/
+  target="$1/ios/Runner/Assets.xcassets/AppIcon.appiconset"
+  cp ./ios/* $target/
+  target="$1/macos/Runner/Assets.xcassets/AppIcon.appiconset"
+  cp ./macos/* $target/
+}
+
+app.icons.all() {
+  app.icons.macos $1
+  app.icons.android $1
+  app.icons.ios $1
 }
 
 ###############################################################################
