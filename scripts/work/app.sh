@@ -96,4 +96,10 @@ app.icons.all() {
   app.icons.ios $1
 }
 
+ios.resize.55() {
+  for one in $*; do
+    echo $one
+    sips -z 2208 1242 $one -o ios_5.5_$one >/dev/null
+  done
+}
 ###############################################################################
