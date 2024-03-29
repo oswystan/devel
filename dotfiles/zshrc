@@ -139,3 +139,29 @@ hl() {
   }
   highlight -O rtf --font 'mplus Nerd Font' --font-size 24 --style molokai "$1" | pbcopy
 }
+
+##################################
+## setup a http server using python
+##################################
+http.here {
+  python -m http.server 80
+}
+
+##################################
+## clear exif info
+##    brew install exiftool
+##################################
+exif.clear() {
+  [[ $# -ne 1 ]] && {
+    echo "Usage: exif.clear <file>"
+    return 1
+  }
+  exiftool -all= $1
+}
+exif.ls() {
+  [[ $# -ne 1 ]] && {
+    echo "Usage: exif.ls <file>"
+    return 1
+  }
+  exiftool $1
+}
