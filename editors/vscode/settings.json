@@ -1,0 +1,102 @@
+{
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      100
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[swift]": {
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      100
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets"
+  },
+  "[kotlin]": {
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      100
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets"
+  },
+  "editor.fontFamily": "operatormono Nerd Font",
+  "editor.fontSize": 17,
+  "editor.codeLensFontFamily": "operatormono Nerd Font",
+  "editor.inlayHints.fontFamily": "operatormono Nerd Font",
+  "debug.console.fontFamily": "operatormono Nerd Font",
+  "debug.console.fontSize": 17,
+  "scm.inputFontFamily": "OperatorMono Nerd Font",
+  "scm.inputFontSize": 17,
+  "terminal.integrated.fontFamily": "operatormono Nerd Font",
+  "terminal.integrated.fontSize": 17,
+  "notebook.output.fontFamily": "operatormono Nerd Font",
+  "chat.editor.fontFamily": "operatormono Nerd Font",
+  "chat.editor.fontSize": 17,
+  "git.openRepositoryInParentFolders": "always",
+  "workbench.editor.enablePreview": false,
+  "editor.minimap.enabled": false,
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": true,
+  "editor.fontVariations": false,
+  "terminal.integrated.letterSpacing": -1,
+  "dart.customDevTools": {},
+  "extensions.ignoreRecommendations": true,
+  "editor.wordWrapColumn": 120,
+  "dart.lineLength": 120,
+  "editor.rulers": [
+    100
+  ],
+  "workbench.startupEditor": "none",
+  "workbench.settings.applyToAllProfiles": [],
+  "explorer.confirmDelete": false,
+  "editor.letterSpacing": -1,
+  "editor.lineHeight": 1.2,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  "apple-swift-format.configSearchPaths": [
+    ".swift-format",
+    "$HOME"
+  ],
+  "editor.suggest.preview": true,
+  "editor.suggest.showStatusBar": true,
+  "emmet.useInlineCompletions": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.suggest.showWords": false,
+  "settingsSync.ignoredSettings": [],
+  "dart.warnWhenEditingFilesOutsideWorkspace": false,
+  "fonted.font": "mplus Nerd Font",
+  "workbench.colorCustomizations": {},
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "editor.formatOnSave": true,
+  "notebook.formatOnSave.enabled": true,
+  "files.autoSaveWhenNoErrors": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.wordWrapColumn": 150
+  },
+  "[markdown]": {
+    "editor.quickSuggestions": true
+  },
+  "prettier.printWidth": 120,
+  "prettier.bracketSameLine": true,
+  "prettier.arrowParens": "avoid",
+  "editor.stickyScroll.enabled": false,
+  "update.mode": "none",
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "editor.detectIndentation": false,
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "liveServer.settings.donotShowInfoMsg": true,
+}
