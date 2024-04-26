@@ -1,43 +1,49 @@
 #####
 [core]
-    editor = nvim
-    pager = less -x1,5
+  editor = nvim
+  pager = less -x1,5
 [credential]
-    helper = cache
+  helper = cache
 [log]
-    date = iso
+  date = iso
 [alias]
-    st = status -s
-    ci = commit
-    co = checkout
-    br = branch -vv
-    cl = clean -fd
-    df = diff
-    lg = log --name-status
+  st = status -s
+  ci = commit
+  co = checkout
+  br = branch -vv
+  cl = clean -fd
+  df = diff
+  lg = log --name-status
+	ls = ls-tree HEAD
+	cat = cat-file -p
+	ll = log --oneline
+	llg = log --oneline --graph
+  lv = log --pretty='%C(auto)%h %G? %ad %an - %d%s'
+  c = clone --depth 1
 [color]
-    ui = auto
+  ui = auto
 [color "diff"]
-    plain = normal
-    meta = bold
-    frag = 123
-    old = 198 bold
-    new = 48 bold
-    commit = 45
-    whitespace = normal 154
+  plain = normal
+  meta = bold
+  frag = 123
+  old = 198 bold
+  new = 48 bold
+  commit = 45
+  whitespace = normal 154
 [color "branch"]
-    current = 43 bold
-    local = normal
-    remote = 45
-    plain = normal
+  current = 43 bold
+  local = normal
+  remote = 45
+  plain = normal
 [color "status"]
-    header = normal
-    added = 154
-    updated = 85
-    changed = 198
-    untracked = 11
-    nobranch = 242
+  header = normal
+  added = 154
+  updated = 85
+  changed = 198
+  untracked = 11
+  nobranch = 242
 [pull]
-    rebase = true
+  rebase = true
 [user]
-    email = oswystan@126.com
-    name = wystan
+  email = oswystan@126.com
+  name = wystan
