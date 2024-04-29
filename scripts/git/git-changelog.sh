@@ -13,8 +13,14 @@ error() {
   echo "ERROR: $*"
   exit 1
 }
+usage() {
+  echo "usage: git changelog <commit or tag>"
+  exit 1
+}
 
-[[ $# -ne 1 ]] && error "usage: git changelog <tag>"
+_prefixes="feature fix doc refact"
+
+[[ $# -ne 1 ]] && usage
 
 now=$(date +'%Y-%m-%dT%TZ%z')
 from=$1
@@ -23,14 +29,12 @@ echo "-------------"
 echo "datetime: $now"
 echo "baseline: $from"
 echo ""
-echo "new-features:"
-echo "-------------"
-git --no-pager log "${from}..HEAD" --grep="^feature:" --oneline
 
-echo ""
-echo "bugfix:"
-echo "-------------"
-git --no-pager log "${from}..HEAD" --grep="^bugfix:" --oneline
-echo ""
+for one in ${_prefixes}; do
+  echo "$one:"
+  echo "-------------"
+  git --no-pager log "${from}..HEAD" --grep="^${one}:" --oneline
+  echo ""
+done
 
 ###########################################################################
