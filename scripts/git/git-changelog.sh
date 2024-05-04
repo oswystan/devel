@@ -33,7 +33,7 @@ echo ""
 for one in ${_prefixes}; do
   echo "$one:"
   echo "-------------"
-  git --no-pager log "${from}..HEAD" --grep="^${one}:" --oneline
+  git --no-pager log "${from}..HEAD" --grep="^${one}:" --pretty='%s'
   echo ""
 done
 
