@@ -10,17 +10,18 @@
 ###########################################################################
 
 error() {
-  echo "ERROR: $*"
+  echo "ERROR: $*" >&2
   exit 1
 }
 usage() {
-  echo "usage: git changelog <commit or tag>"
+  echo "usage: git changelog <commit or tag>" >&2
   exit 1
 }
 
 _prefixes="feature fix doc refact"
 
 [[ $# -ne 1 ]] && usage
+git rev-parse $1 >/dev/null 2>&1 || error "invalid commit id $1"
 
 now=$(date +'%Y-%m-%dT%TZ%z')
 from=$1
