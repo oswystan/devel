@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+###############################################################################
+##
+##       filename: paper.rename.py
+##    description: 
+##        created: 2024/10/05
+##         author: ticktechman
+##
+###############################################################################
+
+## pip3 install pdfrw
+
+from pdfrw import PdfReader
+import os
+import sys
+
+def paper_op(one, rename):
+    title = PdfReader(one).Info.Title
+    if not title:
+        return
+    title = title.strip('(')
+    title = title.strip(')')
+    dest = os.path.join(os.path.dirname(one), title + ".pdf")
+    print(one, "->", dest)
+    if rename:
+        os.rename(one, dest)
+
+def main():
+    operator = os.path.basename(sys.argv[0])
+    rename = False
+    if operator == "paper.rename":
+        rename = True
+
+    for one in sys.argv[1:]:
+        paper_op(one, rename)
+
+if __name__ == "__main__":
+    main()
+
+###############################################################################
