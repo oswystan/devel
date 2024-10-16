@@ -16,10 +16,10 @@ import sys
 
 def paper_op(one, rename):
     title = PdfReader(one).Info.Title
-    if not title:
-        return
     title = title.strip('(')
     title = title.strip(')')
+    if not title:
+        return
     dest = os.path.join(os.path.dirname(one), title + ".pdf")
     print(one, "->", dest)
     if rename:
