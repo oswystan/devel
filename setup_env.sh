@@ -13,8 +13,8 @@ dirs="dotfiles editors scripts"
 cur_dir=$(pwd)
 for one in $dirs
 do
-    cd $cur_dir
-    [ -f $one/INSTALL ] && cd $one && ./INSTALL
+    cd "$cur_dir" || break
+    [ -f "$one/INSTALL" ] && cd "$one" && ./INSTALL
 done
 
 ###########################################################################

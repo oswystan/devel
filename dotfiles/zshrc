@@ -23,6 +23,7 @@ alias ls=lsd
 alias ll="ls -l"
 alias la="ls -lA"
 alias df="df -h"
+alias disk="du -d 1 -k 2>/dev/null|sort -nr"
 alias u2g="iconv -f gbk -t utf-8 "
 alias g2u="iconv -t gbk -f utf-8 "
 alias ..='cd ..'
@@ -160,7 +161,7 @@ hl() {
 ##################################
 ## setup a http server using python
 ##################################
-http.here {
+http.here() {
   python -m http.server 80
 }
 
