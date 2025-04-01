@@ -18,6 +18,7 @@ function pkg() {
                 r) sudo apt remove -y "$@" ;;
                 s) apt search "$@" ;;
                 c) sudo apt autoclean && sudo apt autoremove -y ;;
+                u) sudo apt update && sudo apt upgrade -y ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         elif command -v yum &>/dev/null; then
@@ -26,6 +27,7 @@ function pkg() {
                 r) sudo yum remove -y "$@" ;;
                 s) yum search "$@" ;;
                 c) sudo yum clean all ;;
+                u) sudo yum update -y ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         elif command -v dnf &>/dev/null; then
@@ -34,6 +36,7 @@ function pkg() {
                 r) sudo dnf remove -y "$@" ;;
                 s) dnf search "$@" ;;
                 c) sudo dnf clean all ;;
+                u) sudo dnf upgrade -y ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         elif command -v pacman &>/dev/null; then
@@ -42,6 +45,7 @@ function pkg() {
                 r) sudo pacman -Rns --noconfirm "$@" ;;
                 s) pacman -Ss "$@" ;;
                 c) sudo pacman -Sc && sudo pacman -Rns $(pacman -Qdtq) ;;
+                u) sudo pacman -Syu --noconfirm ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         elif command -v zypper &>/dev/null; then
@@ -50,6 +54,7 @@ function pkg() {
                 r) sudo zypper remove -y "$@" ;;
                 s) zypper search "$@" ;;
                 c) sudo zypper clean --all ;;
+                u) sudo zypper refresh && sudo zypper update -y ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         elif command -v emerge &>/dev/null; then
@@ -58,6 +63,7 @@ function pkg() {
                 r) sudo emerge --deselect "$@" ;;
                 s) emerge --search "$@" ;;
                 c) sudo emerge --depclean ;;
+                u) sudo emerge --sync && sudo emerge -uDU @world ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         elif command -v nix-env &>/dev/null; then
@@ -66,6 +72,7 @@ function pkg() {
                 r) nix-env -e "$@" ;;
                 s) nix-env -qa "$@" ;;
                 c) nix-collect-garbage -d ;;
+                u) nix-channel --update && nix-env -u '*' ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         else
@@ -78,6 +85,7 @@ function pkg() {
                 r) brew uninstall "$@" ;;
                 s) brew search "$@" ;;
                 c) brew cleanup ;;
+                u) brew update && brew upgrade ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         elif command -v port &>/dev/null; then
@@ -86,6 +94,7 @@ function pkg() {
                 r) sudo port uninstall "$@" ;;
                 s) port search "$@" ;;
                 c) sudo port clean --all installed ;;
+                u) sudo port selfupdate && sudo port upgrade outdated ;;
                 *) echo "Unknown command: $cmd" ;;
             esac
         else
@@ -96,17 +105,9 @@ function pkg() {
     fi
 }
 
-function pkg.i() {
-  pkg i "$@"
-}
-
-function pkg.r() {
-  pkg r "$@"
-}
-function pkg.c() {
-  pkg c "$@"
-}
-function pkg.s() {
-  pkg s "$@"
-}
+alias pkg.i="pkg i"
+alias pkg.u="pkg u"
+alias pkg.s="pkg s"
+alias pkg.r="pkg r"
+alias pkg.c="pkg c"
 ###############################################################################
