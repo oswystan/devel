@@ -35,44 +35,6 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 ###################################
-## github commands
-###################################
-hub() {
-  if [[ $# -eq 0 ]]; then
-    cd "$HOME/usr/project/github"
-    return 0
-  fi
-  echo "==>start clone $1..." &&
-    git clone "git@oswystan.github.com:oswystan/$1" &&
-    cd "$1" &&
-    git config --local user.name "oswystan" &&
-    git config --local user.email "oswystan@126.com" &&
-    cd - &&
-    echo "==>succ" || echo "==>fail!!"
-}
-
-hub.key() {
-  ssh-keygen -t ed25519 -C "oswystan@github" -f oswystan.github
-}
-
-ttm() {
-  if [[ $# -eq 0 ]]; then
-    cd "$HOME/usr/project/github"
-    return 0
-  fi
-  echo "==>start clone $1..." &&
-    git clone "git@ticktechman.github.com:ticktechman/$1" &&
-    cd "$1" &&
-    git config --local user.name "ticktechman" &&
-    git config --local user.email "geek.wystan@gmail.com" &&
-    cd - &&
-    echo "==>succ" || echo "==>fail!!"
-}
-ttm.key() {
-  ssh-keygen -t ed25519 -C "ticktechman@github" -f ticktechman.github
-}
-
-###################################
 ## highlight a file and
 ## copy the rich text to system clipboard
 ###################################
