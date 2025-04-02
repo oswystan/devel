@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
 ###############################################################################
 ##
 ##       filename: pkg.sh
-##    description:
+##    description: package management tool for macOS and linux
 ##        created: 2025/04/01
 ##         author: wystan
 ##
