@@ -3,6 +3,13 @@
 ## zsh configurations
 ##
 ##################################################################
+THISDIR="$(dirname "$(realpath "$0")")"
+
+[[ -d "$THISDIR" ]] && {
+  for one in "$THISDIR"/*.sh; do
+    [[ -f "$one" ]] && source "$one"
+  done
+}
 
 ## PATH
 export PATH=/opt/homebrew/bin:$HOME/.local/bin:${PATH}
