@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 ###########################################################################
 ##                     Copyright (C) 2020 wystan
 ##
@@ -10,17 +9,17 @@
 ###########################################################################
 
 rfc() {
-    local one=""
-    if [[ $# -le 0 ]]; then
-        echo "usage: $FUNCNAME <rfc-number> ..."
-        return 1
-    fi
-    for one in $*
-    do
-        one="rfc${one}.txt"
-        printf "%-18s: " $one && \
-        wget https://www.rfc-editor.org/rfc/$one -O $one > /dev/null 2>&1 && \
-        echo "succ" || echo "fail"
+  local one=""
+  if [[ $# -le 0 ]]; then
+    echo "usage: ${FUNCNAME[0]:-${funcstack[1]}} <rfc-number> ..."
+    return 1
+  fi
+  for one in "$@"
+  do
+    one="rfc${one}.txt"
+    printf "%-18s: " "$one" && \
+      wget "https://www.rfc-editor.org/rfc/$one" -O "$one" > /dev/null 2>&1 && \
+      echo "succ" || echo "fail"
     done
 }
 
