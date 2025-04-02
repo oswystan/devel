@@ -34,21 +34,3 @@ if [ "$(uname)" = "Darwin" ]; then
   alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 fi
 
-###################################
-## highlight a file and
-## copy the rich text to system clipboard
-###################################
-hl() {
-  [[ $# -ne 1 ]] && {
-    echo "Usage: hl <file>"
-    return 1
-  }
-  highlight -O rtf --font 'mplus Nerd Font' --font-size 24 --style molokai "$1" | pbcopy
-}
-
-##################################
-## setup a http server using python
-##################################
-http.here() {
-  python -m http.server 80
-}
