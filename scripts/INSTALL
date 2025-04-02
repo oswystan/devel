@@ -11,11 +11,11 @@
 
 setup_git() {
     rm -f ~/.git-completion.sh
-    ln -s $PWD/git/git-completion.sh ~/.git-completion.sh
+    ln -s "$PWD/git/git-completion.sh" ~/.git-completion.sh
     sudo rm -f /usr/local/bin/git-release /usr/local/bin/git-unrelease /usr/local/bin/git-changelog
-    sudo ln -s $PWD/git/git-release.sh /usr/local/bin/git-release
-    sudo ln -s $PWD/git/git-unrelease.sh /usr/local/bin/git-unrelease
-    sudo ln -s $PWD/git/git-changelog.sh /usr/local/bin/git-changelog
+    sudo ln -s "$PWD/git/git-release.sh" /usr/local/bin/git-release
+    sudo ln -s "$PWD/git/git-unrelease.sh" /usr/local/bin/git-unrelease
+    sudo ln -s "$PWD/git/git-changelog.sh" /usr/local/bin/git-changelog
 }
 
 setup_scripts() {
