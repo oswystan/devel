@@ -8,10 +8,10 @@
 ###############################################################################
 
 ## clear all exif tags
-exif.clear() {
+function exif.clear() {
   exif.check || return 1
   [[ $# -lt 1 ]] && {
-    echo "Usage: ${FUNCNAME[0]:-${funcstack[1]}} <file1> ..."
+    echo "Usage: ${0} <file1> ..."
     return 1
   }
   local one=""
@@ -22,10 +22,10 @@ exif.clear() {
 }
 
 ## dump jpeg exif tags
-exif.dump() {
+function exif.dump() {
   exif.check || return 1
   [[ $# -lt 1 ]] && {
-    echo "Usage: ${FUNCNAME[0]:-${funcstack[1]}} <file1> ..."
+    echo "Usage: ${0} <file1> ..."
     return 1
   }
 

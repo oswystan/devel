@@ -8,10 +8,10 @@
 ##
 ###########################################################################
 
-rfc() {
+function rfc() {
   local one=""
   if [[ $# -le 0 ]]; then
-    echo "usage: ${FUNCNAME[0]:-${funcstack[1]}} <rfc-number> ..."
+    echo "usage: ${0} <rfc-number> ..."
     return 1
   fi
   for one in "$@"
