@@ -34,80 +34,6 @@ if [ "$(uname)" = "Darwin" ]; then
   alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 fi
 
-#################################
-## vpn
-#################################
-function vpn.on() {
-  export https_proxy=http://127.0.0.1:7890
-  export http_proxy=http://127.0.0.1:7890
-  export all_proxy=socks5://127.0.0.1:7890
-}
-
-function vpn.off() {
-  export https_proxy=
-  export http_proxy=
-  export all_proxy=
-}
-
-#################################
-## compression & decompression
-#################################
-function x() {
-  [[ $# -lt 1 ]] && echo "usage: $0 <file-1> ..." && return 1
-  while [ $# -ge 1 ]; do
-    [[ ! -f $1 ]] && echo "ERROR: $1 not found" && shift && continue
-    case $1 in
-      *.tar.gz|*.tgz)
-        tar xvf "$1"
-        ;;
-      *.tar.bz2)
-        tar jxvf "$1"
-        ;;
-      *.tar.xz)
-        tar Jxvf "$1"
-        ;;
-      *.zip)
-        unzip "$1"
-        ;;
-      *.rar)
-        unrar x "$1"
-        ;;
-      *.7z)
-        7z x "$1"
-        ;;
-      *)
-        echo "ERROR: unknown type for $1"
-        ;;
-    esac;
-    shift
-  done
-}
-
-function z() {
-  [[ $# -lt 1 ]] && echo "usage: $0 <file-1> ..." && return 1
-  tar Jcvf "${1}.tar.xz" "${1}"
-}
-function z.bz2() {
-  [[ $# -lt 1 ]] && echo "usage: $0 <file-1> ..." && return 1
-  tar jcvf "${1}.tar.bz2" "${1}"
-}
-function z.gz() {
-  [[ $# -lt 1 ]] && echo "usage: $0 <file-1> ..." && return 1
-  tar zcvf "${1}.tar.gz" "${1}"
-}
-function z.7z() {
-  [[ $# -lt 1 ]] && echo "usage: $0 <file-1> ..." && return 1
-  7z a "${1}.7z" "${1}"
-}
-function z.zip() {
-  [[ $# -lt 1 ]] && echo "usage: $0 <file-1> ..." && return 1
-  zip -r "${1}.zip" "${1}"
-}
-function z.rar() {
-  [[ $# -lt 1 ]] && echo "usage: $0 <file-1> ..." && return 1
-  rar a "${1}.rar" "${1}"
-}
-
 ###################################
 ## github commands
 ###################################
@@ -163,23 +89,4 @@ hl() {
 ##################################
 http.here() {
   python -m http.server 80
-}
-
-##################################
-## clear exif info
-##    brew install exiftool
-##################################
-exif.clear() {
-  [[ $# -ne 1 ]] && {
-    echo "Usage: exif.clear <file>"
-    return 1
-  }
-  exiftool -all= $1
-}
-exif.ls() {
-  [[ $# -ne 1 ]] && {
-    echo "Usage: exif.ls <file>"
-    return 1
-  }
-  exiftool $1
 }
