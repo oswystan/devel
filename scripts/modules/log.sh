@@ -31,4 +31,12 @@ function log.level() {
   [[ $# -eq 1 ]] && g_log_level=$1 || return "${g_log_level}"
 }
 
+function log.check() {
+  ! command -v gdate &>/dev/null && {
+    echo "Install coreutils first";
+    return 1;
+  }
+  return 0;
+}
+
 ###############################################################################
