@@ -14,13 +14,12 @@ function rfc() {
     echo "usage: ${0} <rfc-number> ..."
     return 1
   fi
-  for one in "$@"
-  do
+  for one in "$@"; do
     one="rfc${one}.txt"
     printf "%-18s: " "$one" && \
       wget "https://www.rfc-editor.org/rfc/$one" -O "$one" > /dev/null 2>&1 && \
-      echo "succ" || echo "fail"
-    done
+    echo "succ" || echo "fail"
+  done
 }
 
 ###########################################################################
