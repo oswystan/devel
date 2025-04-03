@@ -3,42 +3,48 @@
 ## zsh configurations
 ##
 ##################################################################
-THISDIR="$(dirname "$(realpath "$0")")"
+this_dir="$(dirname "$(realpath "$0")")"
+os_name="$(uname -s)"
 
-[[ -d "$THISDIR" ]] && {
-  for one in "$THISDIR"/*.sh; do
+#-------------------------------------
+# includes
+#-------------------------------------
+[[ -d "$this_dir" ]] && {
+  for one in "$this_dir"/*.sh; do
     [[ -f "$one" ]] && source "$one"
   done
 }
 
-## PATH
-export PATH=/opt/homebrew/bin:$HOME/.local/bin:${PATH}
-export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-
-## homebrew
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
-export HOMEBREW_NO_AUTO_UPDATE=true
-
-## misc
+#-------------------------------------
+# environment variables
+#-------------------------------------
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-## alias
+export PATH="$HOME/.local/bin:$PATH"
+[[ "$os_name" == "Darwin" ]] && {
+  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
+  export HOMEBREW_NO_AUTO_UPDATE=true
+  export PATH="/opt/homebrew/bin:/opt/homebrew/opt/ruby/bin:$PATH"
+}
+
+#-------------------------------------
+# aliases
+#-------------------------------------
 alias vim=nvim
 alias vi=nvim
-alias cls="clear && printf '\033c'"
 alias ls=lsd
 alias ll="ls -l"
 alias la="ls -lA"
+alias cls="clear && printf '\033c'"
+alias lss='du -sh *|sort -hr'
 alias df="df -h"
-alias disk="du -sh *|sort -hr|head -10"
 alias u2g="iconv -f gbk -t utf-8 "
 alias g2u="iconv -t gbk -f utf-8 "
 alias ..='cd ..'
-alias ...='cd ../..'
-if [ "$(uname)" = "Darwin" ]; then
-  alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
-  alias lsusb="system_profiler SPUSBDataType"
-  alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-fi
 
+[[ "$os_name" == "Darwin" ]] && {
+  alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+  alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+  alias lsusb="system_profiler SPUSBDataType"
+}
