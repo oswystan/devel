@@ -10,7 +10,7 @@
 GITHUB_DIR="$HOME/usr/project/github"
 
 function hub() {
-  [[ $# -eq 0 ]] && cd "$GITHUB_DIR" && return 0 || return 1
+  [[ $# -eq 0 ]] && cd "$GITHUB_DIR" && return 0
 
   echo "==>start clone $1..." &&
     git clone "git@oswystan.github.com:oswystan/$1" &&
@@ -18,11 +18,11 @@ function hub() {
     git config --local user.name "oswystan" &&
     git config --local user.email "oswystan@126.com" &&
     cd - &&
-  echo "==>succ" || echo "==>fail!!"
+    echo "==>succ" || echo "==>fail!!"
 }
 
 function hub.ttm() {
-  [[ $# -eq 0 ]] && cd "$GITHUB_DIR" && return 0 || return 1
+  [[ $# -eq 0 ]] && cd "$GITHUB_DIR" && return 0
 
   echo "==>start clone $1..." &&
     git clone "git@ticktechman.github.com:ticktechman/$1" &&
@@ -30,7 +30,7 @@ function hub.ttm() {
     git config --local user.name "ticktechman" &&
     git config --local user.email "geek.wystan@gmail.com" &&
     popd &&
-  echo "==>succ" || echo "==>fail!!"
+    echo "==>succ" || echo "==>fail!!"
 }
 
 function hub.key() {
@@ -46,14 +46,12 @@ function hub.ttm.backup() {
   dir="$(date +'%Y-%m-%d')"
 
   mkdir "$dir" && pushd "$dir" || return 1
-  for one in eraser profiles dmg srt2fcpxml uploader mac-defaults
-  do
+  for one in eraser profiles dmg srt2fcpxml uploader mac-defaults; do
     echo "=> backup $one"
-    git clone --mirror git@ticktechman.github.com:ticktechman/$one > /dev/null
+    git clone --mirror git@ticktechman.github.com:ticktechman/$one >/dev/null
     echo ""
   done
   popd || true
 }
-
 
 ###############################################################################
