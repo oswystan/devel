@@ -37,7 +37,7 @@ alias ls=lsd
 alias ll="ls -l"
 alias la="ls -lA"
 alias cls="clear && printf '\033c'"
-alias lss='du -sh *|sort -hr'
+alias lss='ls -1A | while IFS= read -r one; do du -sh "$one"; done | sort -hr'
 alias df="df -h"
 alias u2g="iconv -f gbk -t utf-8 "
 alias g2u="iconv -t gbk -f utf-8 "
