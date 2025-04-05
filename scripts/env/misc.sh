@@ -27,4 +27,13 @@ function http.here() {
   python -m http.server 80
 }
 
+## whether
+function whether() {
+  curl -s "wttr.in/$(curl -s http://myip.ipip.net|awk '{print $5}')?lang=zh-cn"
+}
+
+function randpass() {
+  openssl rand -base64 21
+}
+
 ###############################################################################
