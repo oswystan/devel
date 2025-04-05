@@ -13,6 +13,17 @@ g_log_level=1
 g_log_tag=('D' 'I' 'W' 'E' 'F')
 g_datecmd=$( [[ $(uname) == Darwin ]] && echo gdate || echo date )
 
+function log.level() {
+  [[ $# -eq 1 ]] && g_log_level=$1 || return "${g_log_level}"
+}
+
+function log.check() {
+  ! command -v "${g_datecmd}" &>/dev/null && {
+    echo "Install coreutils first";
+    return 1;
+  }
+  return 0;
+}
 
 function log() {
   local level=$1
@@ -28,17 +39,5 @@ function logi() { log 1 "$@"; }
 function logw() { log 2 "$@"; }
 function loge() { log 3 "$@"; }
 function logf() { log 4 "$@"; }
-
-function log.level() {
-  [[ $# -eq 1 ]] && g_log_level=$1 || return "${g_log_level}"
-}
-
-function log.check() {
-  ! command -v "${g_datecmd}" &>/dev/null && {
-    echo "Install coreutils first";
-    return 1;
-  }
-  return 0;
-}
 
 ###############################################################################
