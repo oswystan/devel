@@ -11,13 +11,15 @@
 ## 0-debug, 1-info, 2-warning, 3-error, 4-fatal
 g_log_level=1
 g_log_tag=('D' 'I' 'W' 'E' 'F')
+g_datecmd=$( [[ $(uname) == Darwin ]] && echo gdate || echo date )
+
 
 function log() {
   local level=$1
   [[ $g_log_level -gt $level ]] && return 0
   shift
   local message
-  message="[${g_log_tag[$level]}|$(gdate +"%Y-%m-%dT%T.%3N%z")]$*"
+  message="[${g_log_tag[$level]}|$(${g_datecmd} +"%Y-%m-%dT%T.%3N%z")]$*"
   [[ $level -ge 3 ]] && echo -e "$message" >&2 ||  echo -e "$message"
 }
 
@@ -32,7 +34,7 @@ function log.level() {
 }
 
 function log.check() {
-  ! command -v gdate &>/dev/null && {
+  ! command -v "${g_datecmd}" &>/dev/null && {
     echo "Install coreutils first";
     return 1;
   }

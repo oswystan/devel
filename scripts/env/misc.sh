@@ -12,7 +12,7 @@
 ## copy the rich text to system clipboard
 ## deps: highlight
 ###################################
-function hl() {
+function m.hl() {
   [[ $# -ne 1 ]] && {
     echo "Usage: hl <file>"
     return 1
@@ -23,16 +23,16 @@ function hl() {
 ##################################
 ## setup a http server using python
 ##################################
-function http.here() {
+function m.http.server() {
   python -m http.server 80
 }
 
 ## whether
-function whether() {
+function m.whether() {
   curl -s "wttr.in/$(curl -s http://myip.ipip.net|awk '{print $5}')?lang=zh-cn"
 }
 
-function randpass() {
+function m.randpass() {
   openssl rand -base64 21
 }
 
