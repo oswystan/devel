@@ -43,6 +43,7 @@ alias shred="shred -xu --force"
 alias u2g="iconv -f gbk -t utf-8 "
 alias g2u="iconv -t gbk -f utf-8 "
 alias ..='cd ..'
+alias http-server="python -m http.server 8080"
 
 [[ "$os_name" == "Darwin" ]] && {
   alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
