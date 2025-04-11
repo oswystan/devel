@@ -16,6 +16,7 @@ setup_git() {
     sudo ln -s "$PWD/git/git-release.sh" /usr/local/bin/git-release
     sudo ln -s "$PWD/git/git-unrelease.sh" /usr/local/bin/git-unrelease
     sudo ln -s "$PWD/git/git-changelog.sh" /usr/local/bin/git-changelog
+    sudo ln -s "$PWD/https-server.py" /usr/local/bin/https-server
 }
 
 setup_scripts() {
