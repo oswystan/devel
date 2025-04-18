@@ -12,6 +12,7 @@ alias ssl.cert.cat='openssl x509 -noout -text -in '
 alias ssl.csr.cat='openssl req -noout -text -in '
 alias ssl.key.rsa.cat='openssl rsa -noout -text -in '
 alias ssl.key.ec.cat='openssl ec -noout -text -in '
+alias ssl.ciphers='openssl ciphers -v 'ALL:@SECLEVEL=1''
 
 function ssl.cert.RSA-SHA256() {
   [[ $# -ne 1 ]] && { echo "usage: $0 <domain-name>"; return 1; }
