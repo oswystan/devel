@@ -12,8 +12,8 @@
 ## setup bashrc
 setup_bashrc() {
   rc_file="$PWD/bashrc"
-  is_exist=$(grep $rc_file ~/.bashrc | wc -l)
-  if [ $is_exist -le 0 ]; then
+  is_exist=$(grep -c "$rc_file" ~/.bashrc)
+  if [ "$is_exist" -le 0 ]; then
     cat >>~/.bashrc <<!EOF
 
 ##############################################################
@@ -28,12 +28,12 @@ fi
 
 ## setup tmux configuration
 setup_tmux() {
-  rm -f ~/.tmux.conf && ln -s $PWD/tmux.conf ~/.tmux.conf
+  rm -f ~/.tmux.conf && ln -s "$PWD/tmux.conf" ~/.tmux.conf
 }
 
 ## setup clang-format
 setup_clang() {
-  rm -f ~/.clang-format && ln -s $PWD/clang-format ~/.clang-format
+  rm -f ~/.clang-format && ln -s "$PWD/clang-format" ~/.clang-format
 }
 
 ## setup git
