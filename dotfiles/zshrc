@@ -5,7 +5,7 @@
 ##################################################################
 this_dir="$(dirname "$(realpath "$0")")"
 os_name="$(uname -s)"
-setopt rm_star_silent
+setopt rm_star_silent   ## disable confirmation when rm -f *
 
 #-------------------------------------
 # includes

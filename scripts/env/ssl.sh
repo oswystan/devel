@@ -65,4 +65,19 @@ function ssl.cert.ECDSA-SHA384() {
     -subj "/CN=${CN}"
 }
 
+function ssl.site.ciphersuite() {
+  [[ $# -lt 1 ]] && { echo "usage: $0 <URL1> ..."; return 1; }
+  for one in "$@"; do
+    local val="$(curl -v --tls-max 1.2 "https://$one" 2>&1|grep 'SSL connection using'|cut -d'/' -f 2)"
+    printf "%32s: $one\n" "$val"
+  done
+}
+function ssl.site.tls.version() {
+  [[ $# -lt 1 ]] && { echo "usage: $0 <URL1> ..."; return 1; }
+  for one in "$@"; do
+    local val="$(curl -v "https://$one" 2>&1|grep 'SSL connection using'|cut -d'/' -f 1)"
+    printf "%32s: $one\n" "$val"
+  done
+}
+
 ###############################################################################
