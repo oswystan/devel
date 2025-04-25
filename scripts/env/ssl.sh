@@ -72,11 +72,11 @@ function ssl.site.ciphersuite() {
     printf "%32s: $one\n" "$val"
   done
 }
-function ssl.site.tls.version() {
+function ssl.site.tls() {
   [[ $# -lt 1 ]] && { echo "usage: $0 <URL1> ..."; return 1; }
   for one in "$@"; do
-    local val="$(curl -v "https://$one" 2>&1|grep 'SSL connection using'|cut -d'/' -f 1)"
-    printf "%32s: $one\n" "$val"
+    local val="$(curl -v "https://$one" 2>&1|grep 'SSL connection using'|cut -d'/' -f1-2)"
+    printf "%-64s: $one\n" "$val"
   done
 }
 
