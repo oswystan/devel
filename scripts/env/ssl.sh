@@ -80,4 +80,19 @@ function ssl.site.tls() {
   done
 }
 
+function ssl.ocsp.url() {
+  [[ $# -ne 1 ]] && { echo "usage: $0 <cert-file>"; return 1; }
+  openssl x509 -in "$1" -noout -ocsp_uri
+}
+function ssl.ocsp() {
+  [[ $# -ne 2 ]] && { echo "usage: $0 <cert-file> <chain-file>"; return 1; }
+  local url="$(ssl.ocsp.url "$1")"
+  openssl ocsp \
+    -issuer "$2" \
+    -cert "$1" \
+    -url "$url" \
+    -resp_text \
+    -noverify
+}
+
 ###############################################################################
