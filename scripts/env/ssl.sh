@@ -75,15 +75,15 @@ function ssl.site.ciphersuite() {
 function ssl.site.tls() {
   [[ $# -lt 1 ]] && { echo "usage: $0 <URL1> ..."; return 1; }
   for one in "$@"; do
-    local val="$(curl -v "https://$one" 2>&1|grep 'SSL connection using'|cut -d'/' -f1-2)"
-    printf "%-64s: $one\n" "$val"
+    local val="$(curl -v "https://$one" 2>&1|grep 'SSL connection using'|cut -d'/' -f1-2|cut -d' ' -f5-)"
+    printf "%-32s: $one\n" "$val"
   done
 }
 function ssl.site.ca() {
   [[ $# -lt 1 ]] && { echo "usage: $0 <URL1> ..."; return 1; }
   for one in "$@"; do
-    local val="$(curl -vI "https://$one" 2>&1|grep 'issuer'|sed 's/^[*][[:space:]]*//')"
-    printf "%-64s: $one\n" "$val"
+    local val="$(curl -svI "https://$one" 2>&1|grep 'issuer'|cut -d';' -f2|cut -d'=' -f2)"
+    printf "%-32s: $one\n" "$val"
   done
 }
 

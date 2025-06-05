@@ -26,10 +26,10 @@ function hub.ttm() {
 
   echo "==>start clone $1..." &&
     git clone "git@ticktechman.github.com:ticktechman/$1" &&
-    pushd "$1" &&
+    cd "$1" &&
     git config --local user.name "ticktechman" &&
     git config --local user.email "geek.wystan@gmail.com" &&
-    popd &&
+    cd - &&
     echo "==>succ" || echo "==>fail!!"
 }
 
