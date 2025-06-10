@@ -37,7 +37,7 @@ install_nerdfonts() {
 
 install_basic() {
   brew install ctags cscope git cloc sloccount dos2unix tree wget vim tmux jq zip unzip p7zip
-  brew install --cask brave-browser iina maczip wpsoffice iterm2 rectangle snipaste hiddenbar rar keycastr
+  brew install --cask brave-browser iina maczip wpsoffice iterm2 rectangle snipaste hiddenbar rar keycastr localsend
   sudo gem install iStats
 }
 
