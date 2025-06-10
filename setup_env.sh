@@ -11,10 +11,9 @@
 
 dirs="dotfiles editors scripts"
 cur_dir=$(pwd)
-for one in $dirs
-do
-    cd "$cur_dir" || break
-    [ -f "$one/INSTALL" ] && cd "$one" && ./INSTALL
+for one in $dirs; do
+  cd "$cur_dir" || break
+  [ -f "$one/INSTALL" ] && cd "$one" && ./INSTALL
 done
 
 ###########################################################################
