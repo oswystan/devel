@@ -36,9 +36,17 @@ install_nerdfonts() {
 }
 
 install_basic() {
-  brew install ctags cscope git cloc sloccount dos2unix tree wget vim tmux jq zip unzip p7zip
-  brew install --cask brave-browser iina maczip wpsoffice iterm2 rectangle snipaste hiddenbar rar keycastr localsend
+  brew install ctags cscope git cloc sloccount dos2unix tree wget vim tmux jq zip unzip p7zip coreutils
+  brew install ruby golang lua
+  brew install --cask brave-browser maczip iterm2 rar visual-studio-code orbstack
+  brew install --cask iina wpsoffice rectangle snipaste hiddenbar keycastr localsend visual-studio-code netron
   sudo gem install iStats
+}
+
+install_nvim() {
+  brew install neovim
+  [[ ! -f "$HOME/.config" ]] && mkdir "$HOME/.config"
+  git clone --depth=1 https://github.com/ticktechman/nvchad-start "$HOME/.config/nvim"
 }
 
 install_cpp() {
@@ -70,11 +78,21 @@ bugfix() {
   sudo pwpolicy clearaccountpolicies
 }
 
+install_clashx() {
+  wget https://github.com/ticktechman/green/releases/download/v0.1/green.tar.xz
+  tar Jxvf green.tar.xz
+}
+
 #######################################################
 
 bugfix
 install_homebrew
 install_basic
-install_android
-# install_db
+install_omz
+install_nerdfonts
+install_nvim
+install_cpp
 install_node
+install_android
+# install_clashx
+# install_db

@@ -47,11 +47,13 @@ setup_git() {
 
 setup_others() {
   cp ./shellcheckrc "$HOME/.shellcheckrc"
+  cp ./p10k.zsh "$HOME/.p10k.zsh"
 }
 
 ###########################################################################
 echo "==>install dotfiles..."
-setup_bashrc
+# setup_bashrc
 setup_tmux
 setup_clang
 setup_git
+setup_others
