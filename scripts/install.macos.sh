@@ -22,11 +22,28 @@ install_homebrew() {
   source "$HOME/.zshrc"
 }
 
+install_omz() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+}
+
+install_nerdfonts() {
+  git clone --depth=1 https://github.com/oswystan/nerd-fonts .nerd-fonts
+  cp -a .nerd-fonts/{*.ttf,*.otf} "$HOME/Library/Fonts/"
+  rm -rf .nerd-fonts
+}
+
 install_basic() {
   brew install ctags cscope git cloc sloccount dos2unix tree wget vim tmux jq zip unzip p7zip
-  brew install openconnect
+  brew install --cask iina maczip wpsoffice iterm2 rectangle snipaste hiddenbar rar
   sudo gem install iStats
-  ## install sizeup
+}
+
+install_cpp() {
+  brew reinstall llvm
+  echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >>"$HOME/.zshrc"
 }
 
 install_android() {
