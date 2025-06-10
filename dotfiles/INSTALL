@@ -45,6 +45,10 @@ setup_git() {
   [[ $ver > '1.7.10' ]] && git config --global push.default simple
 }
 
+setup_others() {
+  cp ./shellcheckrc "$HOME/.shellcheckrc"
+}
+
 ###########################################################################
 echo "==>install dotfiles..."
 setup_bashrc

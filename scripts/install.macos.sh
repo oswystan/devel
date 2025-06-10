@@ -58,8 +58,8 @@ install_db() {
 install_node() {
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
   source "$HOME/.zshrc"
-  nvm install --lts &&
-    brew install pnpm || echo "==> FAIL"
+  nvm install --lts
+  brew install pnpm
 }
 
 bugfix() {
