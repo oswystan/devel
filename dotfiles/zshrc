@@ -3,9 +3,12 @@
 ## zsh configurations
 ##
 ##################################################################
+
+[[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
+
 this_dir="$(dirname "$(realpath "$0")")"
 os_name="$(uname -s)"
-setopt rm_star_silent   ## disable confirmation when rm -f *
+setopt rm_star_silent ## disable confirmation when rm -f *
 
 #-------------------------------------
 # includes
