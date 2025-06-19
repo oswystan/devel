@@ -40,7 +40,7 @@ install_basic() {
   brew install ruby golang lua
   brew install --cask brave-browser maczip iterm2 rar visual-studio-code orbstack
   brew install --cask iina wpsoffice rectangle snipaste hiddenbar keycastr localsend visual-studio-code netron
-  sudo gem install iStats
+  sudo gem install -n /usr/local/bin iStats
 }
 
 install_nvim() {
