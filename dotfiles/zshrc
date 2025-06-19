@@ -20,6 +20,11 @@ setopt rm_star_silent ## disable confirmation when rm -f *
 }
 
 #-------------------------------------
+# golang env
+#-------------------------------------
+export GOPROXY=https://goproxy.cn,direct
+
+#-------------------------------------
 # environment variables
 #-------------------------------------
 export LANG="en_US.UTF-8"
