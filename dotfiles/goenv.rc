@@ -1,0 +1,4 @@
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export GOPROXY="https://goproxy.cn,direct"
+export PATH="${PATH}:${GOBIN}"
