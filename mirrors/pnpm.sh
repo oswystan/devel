@@ -5,4 +5,4 @@ pnpm get registry
 pnpm config set registry https://registry.npmmirror.com
 
 ## reset to original npm site
-pnpm config set registry https://registry.npmjs.org/
+# pnpm config set registry https://registry.npmjs.org/
