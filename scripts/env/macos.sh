@@ -14,4 +14,8 @@ function macos.bundleid() {
   done
 }
 
+function macos.logout() {
+  osascript -e 'tell application "System Events" to log out'
+}
+
 ###############################################################################
