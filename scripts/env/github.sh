@@ -45,13 +45,14 @@ function hub.ttm.backup() {
   local dir
   dir="$(date +'%Y-%m-%d')"
 
-  mkdir "$dir" && pushd "$dir" || return 1
+  [[ -d "$dir" ]] || mkdir "$dir"
+  cd "$dir"
   for one in eraser profiles dmg srt2fcpxml uploader mac-defaults; do
     echo "=> backup $one"
     git clone --mirror git@ticktechman.github.com:ticktechman/$one >/dev/null
     echo ""
   done
-  popd || true
+  cd -
 }
 
 ###############################################################################

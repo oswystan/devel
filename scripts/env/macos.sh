@@ -42,4 +42,6 @@ function macos.apps() {
   done < <(find /Applications -type d -name "*.app" ! -path "*/.app/*/*.app" -print0)
 }
 
+alias macos.colorfilter="shortcuts run 'color-filter'"
+
 ###############################################################################
